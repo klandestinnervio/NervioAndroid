@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_200"
+        android:orientation="vertical"
+        android:padding="8dp"
+        tools:context=".DiagnosticTestActivity">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Diagnostic\nTest"
+            android:textColor="#3E4785"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:text="1. Full Name"
+            android:textStyle="bold"
+            android:textColor="#3E4785"
+            android:textSize="18sp" />
+
+        <EditText
+            android:layout_width="350dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_input"
+            android:ems="10"
+            android:inputType="text"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:text="2. Age"
+            android:textColor="#3E4785"
+            android:textSize="18sp" />
+
+        <EditText
+            android:layout_width="350dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_input"
+            android:ems="10"
+            android:inputType="text"
+            android:textSize="15sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:text="3. Gender"
+            android:textColor="#3E4785"
+            android:textSize="18sp" />
+
+        <EditText
+            android:layout_width="350dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_input"
+            android:ems="10"
+            android:inputType="text"
+            android:textSize="15sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:text="4. Chest Pain Type"
+            android:textColor="#3E4785"
+            android:textSize="18sp" />
+        <EditText
+            android:layout_width="350dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_input"
+            android:ems="10"
+            android:inputType="text"
+            android:textSize="15sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:text="5. Resting Blood Pressure"
+            android:textColor="#3E4785"
+            android:textSize="18sp" />
+        <EditText
+            android:layout_width="350dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_input"
+            android:ems="10"
+            android:inputType="text"
+            android:textSize="15sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:text="6. Cholesterol"
+            android:textColor="#3E4785"
+            android:textSize="18sp" />
+        <EditText
+            android:layout_width="350dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_input"
+            android:ems="10"
+            android:inputType="text"
+            android:textSize="15sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:text="7. Fasting Blood Pressure"
+            android:textColor="#3E4785"
+            android:textSize="18sp" />
+        <EditText
+            android:layout_width="350dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_input"
+            android:ems="10"
+            android:inputType="text"
+            android:textSize="15sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:text="8. Max Heart Rate Achieved"
+            android:textColor="#3E4785"
+            android:textSize="18sp" />
+        <EditText
+            android:layout_width="350dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_input"
+            android:ems="10"
+            android:inputType="text"
+            android:textSize="15sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:text="9. ST Depression induced exercise"
+            android:textColor="#3E4785"
+            android:textSize="18sp" />
+        <EditText
+            android:layout_width="350dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_input"
+            android:ems="10"
+            android:inputType="text"
+            android:textSize="15sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:text="10. Kind of slope"
+            android:textColor="#3E4785"
+            android:textSize="18sp" />
+        <EditText
+            android:layout_width="350dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_input"
+            android:ems="10"
+            android:inputType="text"
+            android:textSize="15sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:text="11. Major Vessel"
+            android:textColor="#3E4785"
+            android:textSize="18sp" />
+        <EditText
+            android:layout_width="350dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_input"
+            android:ems="10"
+            android:inputType="text"
+            android:textSize="15sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:text="12. Thal Value"
+            android:textColor="#3E4785"
+            android:textSize="18sp" />
+        <EditText
+            android:layout_width="350dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_input"
+            android:ems="10"
+            android:inputType="text"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/btn_result"
+            android:layout_marginTop="20dp"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:text="Finish"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:backgroundTint="#3E4785"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+</ScrollView>

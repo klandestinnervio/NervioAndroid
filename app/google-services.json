@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1060029788607",
+    "project_id": "nervio-123",
+    "storage_bucket": "nervio-123.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1060029788607:android:65075cf79783517f5a710a",
+        "android_client_info": {
+          "package_name": "com.example.nerv_io"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1060029788607-esabko21uvcihv7jf2fao784pd3in484.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nerv_io",
+            "certificate_hash": "2502eca68820052a83a0abe11e68721d344fd76a"
+          }
+        },
+        {
+          "client_id": "1060029788607-kib6q93v8anon486lko42p8riteg0plu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKy69gjAiU_3hp442r0aDshPAnSVwFza0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1060029788607-kib6q93v8anon486lko42p8riteg0plu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
