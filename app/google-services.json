@@ -1,41 +1,41 @@
 {
   "project_info": {
-    "project_number": "1060029788607",
-    "project_id": "nervio-123",
-    "storage_bucket": "nervio-123.appspot.com"
+    "project_number": "816147907600",
+    "project_id": "nervioandroid",
+    "storage_bucket": "nervioandroid.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1060029788607:android:65075cf79783517f5a710a",
+        "mobilesdk_app_id": "1:816147907600:android:f2f62132c256e296da7695",
         "android_client_info": {
           "package_name": "com.example.nerv_io"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1060029788607-esabko21uvcihv7jf2fao784pd3in484.apps.googleusercontent.com",
+          "client_id": "816147907600-9hs853qbp6ifp5nuukbv6ug8qdsfh2rc.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.nerv_io",
-            "certificate_hash": "2502eca68820052a83a0abe11e68721d344fd76a"
+            "certificate_hash": "edb7fba393eb4b4f0e31063695a01cd8ae21e855"
           }
         },
         {
-          "client_id": "1060029788607-kib6q93v8anon486lko42p8riteg0plu.apps.googleusercontent.com",
+          "client_id": "816147907600-otnihcsku4pkr35q3nr5h0gcmal2d0q6.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBKy69gjAiU_3hp442r0aDshPAnSVwFza0"
+          "current_key": "AIzaSyCWduGhLeXoUr54spCN2DbCEYhXOR57vvY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1060029788607-kib6q93v8anon486lko42p8riteg0plu.apps.googleusercontent.com",
+              "client_id": "816147907600-otnihcsku4pkr35q3nr5h0gcmal2d0q6.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
