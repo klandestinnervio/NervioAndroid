@@ -4,56 +4,53 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="10dp"
-    android:background="@color/blue_200"
-    tools:context=".MenuActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".SignInActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:src="@drawable/profile"
-        android:layout_marginTop="20dp"
-        android:contentDescription="@string/app_name" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="380dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="30dp"
-        app:cardBackgroundColor="@color/blue_500"
-        app:cardCornerRadius="30dp">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="20dp"
-        android:text="Hi, Welcome!"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:textColor="#3E4785"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="50dp"
-        android:text="Hope you're well today"
-        android:textSize="25sp"
-        android:alpha="80"
-        android:textStyle="bold"
-        android:textColor="#292929"/>
+            <TextView
+                android:id="@+id/tv_welcome"
+                android:text="Hi, Welcome!"
+                android:textColor="#3E4785"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:text="Hope you're well today"
+                android:textColor="#3E4785"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textStyle="normal"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/tv_welcome"/>
+
+            <ImageView
+                android:id="@+id/tv_user"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/profile"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/tv_user"/>
+
+        </RelativeLayout>
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:layout_marginTop="70dp"
             android:contentDescription="@string/app_name"
             android:src="@drawable/homepage" />
-    </androidx.cardview.widget.CardView>
 
     <TextView
         android:layout_width="wrap_content"

@@ -3,7 +3,6 @@ package com.example.nerv_io
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.nerv_io.databinding.ActivityMenuBinding
 import com.example.nerv_io.databinding.ActivityResultDiagnosticBinding
 
 

@@ -7,7 +7,6 @@ import com.example.nerv_io.adapter.HospitalAdapter
 import com.example.nerv_io.data.Hospital
 import com.example.nerv_io.databinding.ActivityHospitalRecomBinding
 import com.google.firebase.firestore.FirebaseFirestore
-
 class HospitalRecomActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHospitalRecomBinding
