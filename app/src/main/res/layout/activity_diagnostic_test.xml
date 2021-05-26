@@ -34,8 +34,9 @@
             android:textSize="18sp" />
 
         <EditText
-            android:layout_width="300dp"
-            android:layout_height="55dp"
+            android:id="@+id/user_name"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
@@ -54,13 +55,14 @@
             android:textSize="18sp" />
 
         <EditText
-            android:layout_width="300dp"
-            android:layout_height="55dp"
+            android:id="@+id/user_age"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
             android:ems="10"
-            android:inputType="text"
+            android:inputType="number"
             android:textSize="15sp" />
         <TextView
             android:layout_width="wrap_content"
@@ -73,13 +75,14 @@
             android:textSize="18sp" />
 
         <EditText
-            android:layout_width="300dp"
-            android:layout_height="55dp"
+            android:id="@+id/user_gender"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
             android:ems="10"
-            android:inputType="text"
+            android:inputType="number"
             android:textSize="15sp" />
         <TextView
             android:layout_width="wrap_content"
@@ -91,13 +94,14 @@
             android:textColor="#3E4785"
             android:textSize="18sp" />
         <EditText
-            android:layout_width="300dp"
-            android:layout_height="55dp"
+            android:id="@+id/user_chest_pain"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
             android:ems="10"
-            android:inputType="text"
+            android:inputType="number"
             android:textSize="15sp" />
         <TextView
             android:layout_width="wrap_content"
@@ -109,13 +113,14 @@
             android:textColor="#3E4785"
             android:textSize="18sp" />
         <EditText
-            android:layout_width="300dp"
-            android:layout_height="55dp"
+            android:id="@+id/user_rest_blood"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
             android:ems="10"
-            android:inputType="text"
+            android:inputType="number"
             android:textSize="15sp" />
         <TextView
             android:layout_width="wrap_content"
@@ -127,13 +132,14 @@
             android:textColor="#3E4785"
             android:textSize="18sp" />
         <EditText
-            android:layout_width="300dp"
-            android:layout_height="55dp"
+            android:id="@+id/user_cholesterol"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
             android:ems="10"
-            android:inputType="text"
+            android:inputType="number"
             android:textSize="15sp" />
         <TextView
             android:layout_width="wrap_content"
@@ -145,13 +151,33 @@
             android:textColor="#3E4785"
             android:textSize="18sp" />
         <EditText
-            android:layout_width="300dp"
-            android:layout_height="55dp"
+            android:id="@+id/user_fasting_blood"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
             android:ems="10"
-            android:inputType="text"
+            android:inputType="number"
+            android:textSize="15sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:text="8. Resting Electrocardiographic"
+            android:textColor="#3E4785"
+            android:textSize="18sp" />
+        <EditText
+            android:id="@+id/user_rest_electro"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_input"
+            android:ems="10"
+            android:inputType="number"
             android:textSize="15sp" />
         <TextView
             android:layout_width="wrap_content"
@@ -159,17 +185,18 @@
             android:layout_marginStart="20dp"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
-            android:text="8. Max Heart Rate Achieved"
+            android:text="9. Max Heart Rate Achieved"
             android:textColor="#3E4785"
             android:textSize="18sp" />
         <EditText
-            android:layout_width="300dp"
-            android:layout_height="55dp"
+            android:id="@+id/user_heart_rate"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
             android:ems="10"
-            android:inputType="text"
+            android:inputType="number"
             android:textSize="15sp" />
         <TextView
             android:layout_width="wrap_content"
@@ -177,17 +204,18 @@
             android:layout_marginStart="20dp"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
-            android:text="9. ST Depression induced exercise"
+            android:text="10. Excercise Induced Angina"
             android:textColor="#3E4785"
             android:textSize="18sp" />
         <EditText
-            android:layout_width="300dp"
-            android:layout_height="55dp"
+            android:id="@+id/user_induced_angina"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
             android:ems="10"
-            android:inputType="text"
+            android:inputType="number"
             android:textSize="15sp" />
         <TextView
             android:layout_width="wrap_content"
@@ -195,17 +223,18 @@
             android:layout_marginStart="20dp"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
-            android:text="10. Kind of slope"
+            android:text="11. Oldpeak"
             android:textColor="#3E4785"
             android:textSize="18sp" />
         <EditText
-            android:layout_width="300dp"
-            android:layout_height="55dp"
+            android:id="@+id/user_oldpeak"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
             android:ems="10"
-            android:inputType="text"
+            android:inputType="number"
             android:textSize="15sp" />
         <TextView
             android:layout_width="wrap_content"
@@ -213,17 +242,18 @@
             android:layout_marginStart="20dp"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
-            android:text="11. Major Vessel"
+            android:text="12. Slope of the peak Exercise ST segment"
             android:textColor="#3E4785"
             android:textSize="18sp" />
         <EditText
-            android:layout_width="300dp"
-            android:layout_height="55dp"
+            android:id="@+id/user_kind_slope"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
             android:ems="10"
-            android:inputType="text"
+            android:inputType="number"
             android:textSize="15sp" />
         <TextView
             android:layout_width="wrap_content"
@@ -231,30 +261,56 @@
             android:layout_marginStart="20dp"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
-            android:text="12. Thal Value"
+            android:text="13. Number of major vessels (0-3) colored by flourosopy"
             android:textColor="#3E4785"
             android:textSize="18sp" />
         <EditText
-            android:layout_width="300dp"
-            android:layout_height="55dp"
+            android:id="@+id/user_major_vessel"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
             android:ems="10"
-            android:inputType="text"
+            android:inputType="number"
+            android:textSize="15sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:text="14. Thal Value"
+            android:textColor="#3E4785"
+            android:textSize="18sp" />
+        <EditText
+            android:id="@+id/user_thal_value"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_input"
+            android:ems="10"
+            android:inputType="number"
             android:textSize="15sp" />
 
         <Button
             android:id="@+id/btn_result"
             android:layout_marginTop="20dp"
-            android:layout_width="200dp"
-            android:layout_height="70dp"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
             android:text="Finish"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
             android:backgroundTint="#3E4785"
             android:layout_gravity="center"/>
+
+        <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:text="TextView" />
 
     </LinearLayout>
 </ScrollView>
