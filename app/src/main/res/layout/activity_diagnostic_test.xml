@@ -19,6 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="Diagnostic\nTest"
+            android:fontFamily="@font/ptsanbold"
             android:textColor="@color/dark_blue"
             android:textSize="40sp"
             android:textStyle="bold" />
@@ -28,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:text="@string/question_1"
-            android:textStyle="bold"
+            android:fontFamily="@font/ptsanbold"
             android:textColor="@color/dark_blue"
             android:textSize="18sp" />
 
@@ -47,7 +48,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
+            android:fontFamily="@font/ptsanbold"
             android:layout_marginTop="20dp"
             android:text="@string/question_2"
             android:textColor="@color/dark_blue"
@@ -67,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:textStyle="bold"
+            android:fontFamily="@font/ptsanbold"
             android:text="@string/question_3"
             android:textColor="@color/dark_blue"
             android:textSize="18sp" />
@@ -82,7 +83,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:textStyle="bold"
+            android:fontFamily="@font/ptsanbold"
             android:text="@string/question_4"
             android:textColor="@color/dark_blue"
             android:textSize="18sp" />
@@ -93,14 +94,15 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
             android:ems="10"
+            android:fontFamily="@font/ptsanbold"
             android:textAlignment="center"
             android:inputType="number"
             android:textSize="15sp" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
             android:layout_marginTop="20dp"
+            android:fontFamily="@font/ptsanbold"
             android:text="@string/question_5"
             android:textColor="@color/dark_blue"
             android:textSize="18sp" />
@@ -118,7 +120,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:textStyle="bold"
+            android:fontFamily="@font/ptsanbold"
             android:text="@string/question_6"
             android:textColor="@color/dark_blue"
             android:textSize="18sp" />
@@ -136,7 +138,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:textStyle="bold"
+            android:fontFamily="@font/ptsanbold"
             android:text="@string/question_7"
             android:textColor="@color/dark_blue"
             android:textSize="18sp" />
@@ -154,7 +156,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:textStyle="bold"
+            android:fontFamily="@font/ptsanbold"
             android:text="@string/question_8"
             android:textColor="@color/dark_blue"
             android:textSize="18sp" />
@@ -171,7 +173,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
+            android:fontFamily="@font/ptsanbold"
             android:layout_marginTop="20dp"
             android:text="@string/question_9"
             android:textColor="@color/dark_blue"
@@ -189,7 +191,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
+            android:fontFamily="@font/ptsanbold"
             android:layout_marginTop="20dp"
             android:text="@string/question_10"
             android:textColor="@color/dark_blue"
@@ -207,7 +209,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
+            android:fontFamily="@font/ptsanbold"
             android:layout_marginTop="20dp"
             android:text="@string/question_11"
             android:textColor="@color/dark_blue"
@@ -225,7 +227,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
+            android:fontFamily="@font/ptsanbold"
             android:layout_marginTop="20dp"
             android:text="@string/question_12"
             android:textColor="@color/dark_blue"
@@ -243,7 +245,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
+            android:fontFamily="@font/ptsanbold"
             android:layout_marginTop="20dp"
             android:text="@string/question_13"
             android:textColor="@color/dark_blue"
@@ -261,7 +263,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
+            android:fontFamily="@font/ptsanbold"
             android:layout_marginTop="20dp"
             android:text="@string/question_14"
             android:textColor="@color/dark_blue"

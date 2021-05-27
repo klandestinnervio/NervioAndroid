@@ -20,11 +20,6 @@ class HospitalRecomActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHospitalRecomBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        binding.progressBar
-        progressBar.max = 100
-        progressBar.progress = 20
-
         initData()
     }
 

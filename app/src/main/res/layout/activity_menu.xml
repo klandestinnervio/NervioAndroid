@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
     tools:context=".SignInActivity">
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,6 +22,7 @@
             <TextView
                 android:id="@+id/tv_welcome"
                 android:text="Hi, Welcome!"
+                android:fontFamily="@font/ptsanbold"
                 android:textColor="@color/dark_blue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -33,13 +35,14 @@
                 android:layout_height="wrap_content"
                 android:textSize="15sp"
                 android:textStyle="normal"
+                android:fontFamily="@font/ptsansregular"
                 android:layout_marginTop="5dp"
                 android:layout_below="@id/tv_welcome"/>
 
             <ImageView
                 android:id="@+id/img_signout"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:src="@drawable/exit"
                 android:layout_alignParentEnd="true"/>
 
@@ -58,6 +61,7 @@
             android:layout_marginTop="10dp"
             android:text="Our Services"
             android:textColor="#3E4785"
+            android:fontFamily="@font/ptsansregular"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -65,7 +69,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="10dp"
             android:gravity="center"
             android:clipToPadding="false">
 
@@ -95,6 +98,7 @@
                         android:layout_margin="10dp"
                         android:textStyle="bold"
                         android:textSize="20sp"
+                        android:fontFamily="@font/ptsanbold"
                         android:text="Diagnostic\nTest"
                         android:textAlignment="center"
                         android:textColor="@color/dark_blue" />
@@ -129,6 +133,7 @@
                         android:layout_margin="10dp"
                         android:textStyle="bold"
                         android:textSize="20sp"
+                        android:fontFamily="@font/ptsanbold"
                         android:text="Diagnostic\nHistory"
                         android:textAlignment="center"
                         android:textColor="@color/dark_blue" />
@@ -169,6 +174,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:textStyle="bold"
+                        android:fontFamily="@font/ptsanbold"
                         android:textSize="20sp"
                         android:text="Hospital\nRecommended"
                         android:textAlignment="center"
@@ -203,6 +209,7 @@
                         android:layout_margin="10dp"
                         android:textStyle="bold"
                         android:textSize="20sp"
+                        android:fontFamily="@font/ptsanbold"
                         android:text="Help"
                         android:textAlignment="center"
                         android:textColor="@color/dark_blue" />

@@ -16,4 +16,5 @@
     <string name="question_13">13. Number of major vessels (0-3) colored by flourosopy</string>
     <string name="question_14">14. Thal Value</string>
     <string name="finish">Finish</string>
+    <string name="phone_number_s">Phone Number : %s</string>
 </resources>
