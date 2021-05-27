@@ -11,15 +11,17 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="334dp"
-        android:layout_height="498dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="30dp"
+        android:layout_marginBottom="34dp"
         app:cardBackgroundColor="@color/blue_200"
         app:cardCornerRadius="40dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="34dp"
             android:orientation="vertical">
 
             <TextView
@@ -38,6 +40,7 @@
                 android:layout_marginTop="30dp"
                 android:paddingStart="20dp"
                 android:textStyle="normal"
+                android:id="@+id/value_result"
                 android:text="The results of the diagnostic by the system showed: Aisyah nurul (20 years)"
                 android:textColor="#3E4785"
                 android:textSize="15sp"/>
@@ -48,6 +51,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_gravity="center_horizontal"
                 android:text="00.00%"
+                android:id="@+id/value_heart"
                 android:textColor="#3E4785"
                 android:textSize="50sp"
                 android:textStyle="bold"/>

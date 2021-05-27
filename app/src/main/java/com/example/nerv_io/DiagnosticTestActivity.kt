@@ -1,13 +1,12 @@
 package com.example.nerv_io
 
+import android.R
 import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
+import android.widget.*
 import com.example.nerv_io.databinding.ActivityDiagnosticTestBinding
 import com.example.nerv_io.ml.ModelAkurasiOverfittingKecil
 import kotlinx.android.synthetic.main.activity_diagnostic_test.*
@@ -20,16 +19,22 @@ class DiagnosticTestActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDiagnosticTestBinding
 
 
+    private val Item = arrayOf(
+        "Male",
+        "Female"
+    )
+    private var gender = 1F
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDiagnosticTestBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        spinnerAdapter()
         var button: Button = binding.btnResult
         button.setOnClickListener(View.OnClickListener {
             var userName : EditText = binding.userName
             var userAge: EditText = binding.userAge
-            var userGender: EditText = binding.userGender
             var userChestPain: EditText = binding.userChestPain
             var userRestingBlood: EditText = binding.userRestBlood
             var userCholesterol: EditText = binding.userCholesterol
@@ -41,12 +46,10 @@ class DiagnosticTestActivity : AppCompatActivity() {
             var userKindSlope: EditText = binding.userKindSlope
             var userMajorVessel: EditText = binding.userMajorVessel
             var userThalValue: EditText = binding.userThalValue
-            var tv: TextView = binding.textView
 
 
             var name = userName.text.toString()
             var age = userAge.text.toString().toFloat()
-            var gender = userGender.text.toString().toFloat()
             var chestPain = userChestPain.text.toString().toFloat()
             var restingBlood = userRestingBlood.text.toString().toFloat()
             var cholesterol = userCholesterol.text.toString().toFloat()
@@ -58,7 +61,6 @@ class DiagnosticTestActivity : AppCompatActivity() {
             var kindSlope = userKindSlope.text.toString().toFloat()
             var majorVessel = userMajorVessel.text.toString().toFloat()
             var thalValue = userThalValue.text.toString().toFloat()
-            var tvResult = tv.text.toString()
 
 
             var byteBuffer: ByteBuffer = ByteBuffer.allocateDirect(13 * 4)
@@ -85,11 +87,34 @@ class DiagnosticTestActivity : AppCompatActivity() {
             val outputs = model.process(inputFeature0)
             val outputFeature0 = outputs.outputFeature0AsTensorBuffer.floatArray
 
-            tv.setText("Heart Disease - " + outputFeature0[0].toString() + "\nNot Heart Disease - " + outputFeature0[1].toString())
+//            tv.text = "Heart Disease - " + outputFeature0[0].toString() + "\nNot Heart Disease - " + outputFeature0[1].toString()
+
+            val intent = Intent(this, ResultDiagnosticActivity::class.java)
+            intent.putExtra(ResultDiagnosticActivity.NAME, name)
+            intent.putExtra(ResultDiagnosticActivity.AGE, age.toString())
+            intent.putExtra(ResultDiagnosticActivity.Disease, outputFeature0[0].toString())
+            startActivity(intent)
 
             model.close()
 
         })
 
+    }
+
+    private fun spinnerAdapter() {
+        val adapter = ArrayAdapter(this, R.layout.simple_spinner_dropdown_item, Item)
+        binding.spinnerGender.adapter = adapter
+        binding.spinnerGender.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(adapterView: AdapterView<*>, view: View, i: Int, l: Long) {
+                if (i == 0) {
+                     gender = 1F
+                } else {
+                     gender = 0F
+                }
+            }
+
+            override fun onNothingSelected(adapterView: AdapterView<*>) {}
+        }
+        binding.spinnerGender.adapter = adapter
     }
 }

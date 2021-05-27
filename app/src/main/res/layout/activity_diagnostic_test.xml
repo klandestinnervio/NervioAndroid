@@ -11,12 +11,12 @@
         android:background="@color/blue_200"
         android:orientation="vertical"
         android:padding="8dp"
+        android:layout_marginHorizontal="20dp"
         tools:context=".DiagnosticTestActivity">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:text="Diagnostic\nTest"
             android:textColor="#3E4785"
@@ -26,7 +26,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="30dp"
             android:text="1. Full Name"
             android:textStyle="bold"
@@ -35,9 +34,8 @@
 
         <EditText
             android:id="@+id/user_name"
-            android:layout_width="250dp"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
             android:ems="10"
@@ -47,7 +45,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
             android:text="2. Age"
@@ -56,9 +53,8 @@
 
         <EditText
             android:id="@+id/user_age"
-            android:layout_width="250dp"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
             android:ems="10"
@@ -67,27 +63,21 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:textStyle="bold"
             android:text="3. Gender"
             android:textColor="#3E4785"
             android:textSize="18sp" />
 
-        <EditText
-            android:id="@+id/user_gender"
-            android:layout_width="250dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="20dp"
+        <Spinner
+            android:layout_width="match_parent"
+            android:id="@+id/spinner_gender"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
-            android:ems="10"
-            android:inputType="number"
-            android:textSize="15sp" />
+            android:layout_height="40dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:textStyle="bold"
             android:text="4. Chest Pain Type"
@@ -95,9 +85,8 @@
             android:textSize="18sp" />
         <EditText
             android:id="@+id/user_chest_pain"
-            android:layout_width="250dp"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
             android:ems="10"
@@ -106,7 +95,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
             android:text="5. Resting Blood Pressure"
@@ -114,9 +102,8 @@
             android:textSize="18sp" />
         <EditText
             android:id="@+id/user_rest_blood"
-            android:layout_width="250dp"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
             android:ems="10"
@@ -125,7 +112,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:textStyle="bold"
             android:text="6. Cholesterol"
@@ -133,9 +119,8 @@
             android:textSize="18sp" />
         <EditText
             android:id="@+id/user_cholesterol"
-            android:layout_width="250dp"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
             android:ems="10"
@@ -144,7 +129,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:textStyle="bold"
             android:text="7. Fasting Blood Pressure"
@@ -152,9 +136,8 @@
             android:textSize="18sp" />
         <EditText
             android:id="@+id/user_fasting_blood"
-            android:layout_width="250dp"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
             android:ems="10"
@@ -163,7 +146,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:textStyle="bold"
             android:text="8. Resting Electrocardiographic"
@@ -171,9 +153,8 @@
             android:textSize="18sp" />
         <EditText
             android:id="@+id/user_rest_electro"
-            android:layout_width="250dp"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
             android:ems="10"
@@ -182,7 +163,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
             android:text="9. Max Heart Rate Achieved"
@@ -190,9 +170,8 @@
             android:textSize="18sp" />
         <EditText
             android:id="@+id/user_heart_rate"
-            android:layout_width="250dp"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
             android:ems="10"
@@ -201,7 +180,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
             android:text="10. Excercise Induced Angina"
@@ -209,9 +187,8 @@
             android:textSize="18sp" />
         <EditText
             android:id="@+id/user_induced_angina"
-            android:layout_width="250dp"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
             android:ems="10"
@@ -220,7 +197,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
             android:text="11. Oldpeak"
@@ -228,9 +204,8 @@
             android:textSize="18sp" />
         <EditText
             android:id="@+id/user_oldpeak"
-            android:layout_width="250dp"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
             android:ems="10"
@@ -239,7 +214,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
             android:text="12. Slope of the peak Exercise ST segment"
@@ -247,9 +221,8 @@
             android:textSize="18sp" />
         <EditText
             android:id="@+id/user_kind_slope"
-            android:layout_width="250dp"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
             android:ems="10"
@@ -258,7 +231,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
             android:text="13. Number of major vessels (0-3) colored by flourosopy"
@@ -266,9 +238,8 @@
             android:textSize="18sp" />
         <EditText
             android:id="@+id/user_major_vessel"
-            android:layout_width="250dp"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
             android:ems="10"
@@ -277,7 +248,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
             android:text="14. Thal Value"
@@ -285,9 +255,8 @@
             android:textSize="18sp" />
         <EditText
             android:id="@+id/user_thal_value"
-            android:layout_width="250dp"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
             android:ems="10"
@@ -306,11 +275,6 @@
             android:backgroundTint="#3E4785"
             android:layout_gravity="center"/>
 
-        <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="92dp"
-        android:text="TextView" />
 
     </LinearLayout>
 </ScrollView>
