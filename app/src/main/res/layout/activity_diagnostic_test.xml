@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="Diagnostic\nTest"
-            android:textColor="#3E4785"
+            android:textColor="@color/dark_blue"
             android:textSize="40sp"
             android:textStyle="bold" />
 
@@ -27,9 +27,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="1. Full Name"
+            android:text="@string/question_1"
             android:textStyle="bold"
-            android:textColor="#3E4785"
+            android:textColor="@color/dark_blue"
             android:textSize="18sp" />
 
         <EditText
@@ -39,6 +39,8 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
             android:ems="10"
+            app:helperText="Required"
+            android:textAlignment="center"
             android:inputType="text"
             android:textSize="15sp" />
 
@@ -47,8 +49,8 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
-            android:text="2. Age"
-            android:textColor="#3E4785"
+            android:text="@string/question_2"
+            android:textColor="@color/dark_blue"
             android:textSize="18sp" />
 
         <EditText
@@ -58,15 +60,16 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
             android:ems="10"
+            android:textAlignment="center"
             android:inputType="number"
-            android:textSize="15sp" />
+            android:textSize="15sp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:textStyle="bold"
-            android:text="3. Gender"
-            android:textColor="#3E4785"
+            android:text="@string/question_3"
+            android:textColor="@color/dark_blue"
             android:textSize="18sp" />
 
         <Spinner
@@ -80,8 +83,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:textStyle="bold"
-            android:text="4. Chest Pain Type"
-            android:textColor="#3E4785"
+            android:text="@string/question_4"
+            android:textColor="@color/dark_blue"
             android:textSize="18sp" />
         <EditText
             android:id="@+id/user_chest_pain"
@@ -90,6 +93,7 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
             android:ems="10"
+            android:textAlignment="center"
             android:inputType="number"
             android:textSize="15sp" />
         <TextView
@@ -97,14 +101,15 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
-            android:text="5. Resting Blood Pressure"
-            android:textColor="#3E4785"
+            android:text="@string/question_5"
+            android:textColor="@color/dark_blue"
             android:textSize="18sp" />
         <EditText
             android:id="@+id/user_rest_blood"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
+            android:textAlignment="center"
             android:background="@drawable/custom_input"
             android:ems="10"
             android:inputType="number"
@@ -114,14 +119,15 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:textStyle="bold"
-            android:text="6. Cholesterol"
-            android:textColor="#3E4785"
+            android:text="@string/question_6"
+            android:textColor="@color/dark_blue"
             android:textSize="18sp" />
         <EditText
             android:id="@+id/user_cholesterol"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
+            android:textAlignment="center"
             android:background="@drawable/custom_input"
             android:ems="10"
             android:inputType="number"
@@ -131,14 +137,15 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:textStyle="bold"
-            android:text="7. Fasting Blood Pressure"
-            android:textColor="#3E4785"
+            android:text="@string/question_7"
+            android:textColor="@color/dark_blue"
             android:textSize="18sp" />
         <EditText
             android:id="@+id/user_fasting_blood"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
+            android:textAlignment="center"
             android:background="@drawable/custom_input"
             android:ems="10"
             android:inputType="number"
@@ -148,14 +155,15 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:textStyle="bold"
-            android:text="8. Resting Electrocardiographic"
-            android:textColor="#3E4785"
+            android:text="@string/question_8"
+            android:textColor="@color/dark_blue"
             android:textSize="18sp" />
         <EditText
             android:id="@+id/user_rest_electro"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
+            android:textAlignment="center"
             android:background="@drawable/custom_input"
             android:ems="10"
             android:inputType="number"
@@ -165,14 +173,15 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
-            android:text="9. Max Heart Rate Achieved"
-            android:textColor="#3E4785"
+            android:text="@string/question_9"
+            android:textColor="@color/dark_blue"
             android:textSize="18sp" />
         <EditText
             android:id="@+id/user_heart_rate"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
+            android:textAlignment="center"
             android:background="@drawable/custom_input"
             android:ems="10"
             android:inputType="number"
@@ -182,14 +191,15 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
-            android:text="10. Excercise Induced Angina"
-            android:textColor="#3E4785"
+            android:text="@string/question_10"
+            android:textColor="@color/dark_blue"
             android:textSize="18sp" />
         <EditText
             android:id="@+id/user_induced_angina"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
+            android:textAlignment="center"
             android:background="@drawable/custom_input"
             android:ems="10"
             android:inputType="number"
@@ -199,14 +209,15 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
-            android:text="11. Oldpeak"
-            android:textColor="#3E4785"
+            android:text="@string/question_11"
+            android:textColor="@color/dark_blue"
             android:textSize="18sp" />
         <EditText
             android:id="@+id/user_oldpeak"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
+            android:textAlignment="center"
             android:background="@drawable/custom_input"
             android:ems="10"
             android:inputType="number"
@@ -216,14 +227,15 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
-            android:text="12. Slope of the peak Exercise ST segment"
-            android:textColor="#3E4785"
+            android:text="@string/question_12"
+            android:textColor="@color/dark_blue"
             android:textSize="18sp" />
         <EditText
             android:id="@+id/user_kind_slope"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
+            android:textAlignment="center"
             android:background="@drawable/custom_input"
             android:ems="10"
             android:inputType="number"
@@ -233,14 +245,15 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
-            android:text="13. Number of major vessels (0-3) colored by flourosopy"
-            android:textColor="#3E4785"
+            android:text="@string/question_13"
+            android:textColor="@color/dark_blue"
             android:textSize="18sp" />
         <EditText
             android:id="@+id/user_major_vessel"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
+            android:textAlignment="center"
             android:background="@drawable/custom_input"
             android:ems="10"
             android:inputType="number"
@@ -250,14 +263,15 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
-            android:text="14. Thal Value"
-            android:textColor="#3E4785"
+            android:text="@string/question_14"
+            android:textColor="@color/dark_blue"
             android:textSize="18sp" />
         <EditText
             android:id="@+id/user_thal_value"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
+            android:textAlignment="center"
             android:background="@drawable/custom_input"
             android:ems="10"
             android:inputType="number"
@@ -268,11 +282,11 @@
             android:layout_marginTop="20dp"
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:text="Finish"
+            android:text="@string/finish"
             android:textColor="@color/white"
             android:textSize="20sp"
+            android:background="@color/dark_blue"
             android:textStyle="bold"
-            android:backgroundTint="#3E4785"
             android:layout_gravity="center"/>
 
 

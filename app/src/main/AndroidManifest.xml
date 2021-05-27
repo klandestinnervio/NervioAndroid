@@ -13,7 +13,6 @@
         android:theme="@style/Theme.NervIO">
         <activity android:name=".ResultDiagnosticActivity"></activity>
         <activity android:name=".SignInActivity" />
-        <activity android:name=".LoginActivity" />
         <activity android:name=".HospitalRecomActivity" />
         <activity android:name=".DiagnosticTestActivity" />
         <activity android:name=".HistoryDiagnosticActivity" />
