@@ -1,11 +1,13 @@
-package com.example.nerv_io
+package com.example.nerv_io.view
 
 import android.R
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import com.example.nerv_io.databinding.ActivityDiagnosticTestBinding
 import com.example.nerv_io.ml.ModelAkurasiOverfittingKecil
 import org.tensorflow.lite.DataType
@@ -13,6 +15,7 @@ import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 import java.nio.ByteBuffer
 
 class DiagnosticTestActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityDiagnosticTestBinding
 
 
@@ -20,7 +23,28 @@ class DiagnosticTestActivity : AppCompatActivity() {
         "Male",
         "Female"
     )
+
+    private val item1 = arrayOf(
+        "True",
+        "False"
+    )
+    private val item2 = arrayOf(
+        "yes",
+        "no"
+    )
+    private val item3 = arrayOf(
+        "Asymptomatic",
+        "atypical angina",
+        "non-anginal pain",
+        "typical angina"
+    )
     private var gender = 1F
+
+    private var restBlood = 1F
+
+    private var exerciseEngina = 1F
+
+    private var chestPain = 1F
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,18 +52,19 @@ class DiagnosticTestActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         spinnerAdapter()
+        spinnerAdapterRestBlood()
+        spinnerAdapterExerciseEngina()
+        spinnerAdapterChestPain()
+
         val button: Button = binding.btnResult
         button.setOnClickListener(View.OnClickListener {
             val userName : EditText = binding.userName
             val userAge: EditText = binding.userAge
-            val userChestPain: EditText = binding.userChestPain
             val userRestingBlood: EditText = binding.userRestBlood
             val userCholesterol: EditText = binding.userCholesterol
-            val userFastingBlood: EditText = binding.userFastingBlood
             val userRestEletrco: EditText = binding.userRestElectro
             val userHeartRate: EditText = binding.userHeartRate
-            val userIncludeAngina: EditText = binding.userInducedAngina
-            val userOldpeak: EditText = binding.userInducedAngina
+            val userOldPeak : EditText = binding.userOldpeak
             val userKindSlope: EditText = binding.userKindSlope
             val userMajorVessel: EditText = binding.userMajorVessel
             val userThalValue: EditText = binding.userThalValue
@@ -47,14 +72,11 @@ class DiagnosticTestActivity : AppCompatActivity() {
 
             val name = userName.text.toString()
             val age = userAge.text.toString().toFloat()
-            val chestPain = userChestPain.text.toString().toFloat()
             val restingBlood = userRestingBlood.text.toString().toFloat()
             val cholesterol = userCholesterol.text.toString().toFloat()
-            val fastingBlood = userFastingBlood.text.toString().toFloat()
             val restElectro = userRestEletrco.text.toString().toFloat()
             val heartRate = userHeartRate.text.toString().toFloat()
-            val includeAngine = userIncludeAngina.text.toString().toFloat()
-            val oldPeak = userOldpeak.text.toString().toFloat()
+            val oldPeak = userOldPeak.text.toString().toFloat()
             val kindSlope = userKindSlope.text.toString().toFloat()
             val majorVessel = userMajorVessel.text.toString().toFloat()
             val thalValue = userThalValue.text.toString().toFloat()
@@ -66,10 +88,10 @@ class DiagnosticTestActivity : AppCompatActivity() {
             byteBuffer.putFloat(chestPain)
             byteBuffer.putFloat(restingBlood)
             byteBuffer.putFloat(cholesterol)
-            byteBuffer.putFloat(fastingBlood)
+            byteBuffer.putFloat(restBlood)
             byteBuffer.putFloat(restElectro)
             byteBuffer.putFloat(heartRate)
-            byteBuffer.putFloat(includeAngine)
+            byteBuffer.putFloat(exerciseEngina)
             byteBuffer.putFloat(oldPeak)
             byteBuffer.putFloat(kindSlope)
             byteBuffer.putFloat(majorVessel)
@@ -97,15 +119,16 @@ class DiagnosticTestActivity : AppCompatActivity() {
         })
 
     }
+
     private fun spinnerAdapter() {
         val adapter = ArrayAdapter(this, R.layout.simple_spinner_dropdown_item, item)
         binding.spinnerGender.adapter = adapter
         binding.spinnerGender.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(adapterView: AdapterView<*>, view: View, i: Int, l: Long) {
                 if (i == 0) {
-                     gender = 1F
+                    gender = 1F
                 } else {
-                     gender = 0F
+                    gender = 0F
                 }
             }
 
@@ -113,4 +136,57 @@ class DiagnosticTestActivity : AppCompatActivity() {
         }
         binding.spinnerGender.adapter = adapter
     }
+    private fun spinnerAdapterRestBlood() {
+        val adapter = ArrayAdapter(this, R.layout.simple_spinner_dropdown_item, item1)
+        binding.spinnerRestblood.adapter = adapter
+        binding.spinnerRestblood.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(adapterView: AdapterView<*>, view: View, i: Int, l: Long) {
+                if (i == 1) {
+                    restBlood = 1F
+                } else {
+                    restBlood = 0F
+                }
+            }
+
+            override fun onNothingSelected(adapterView: AdapterView<*>) {}
+        }
+        binding.spinnerGender.adapter = adapter
+    }
+    private fun spinnerAdapterExerciseEngina() {
+        val adapter = ArrayAdapter(this, R.layout.simple_spinner_dropdown_item, item2)
+        binding.spinnerExerciseEngina.adapter = adapter
+        binding.spinnerExerciseEngina.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(adapterView: AdapterView<*>, view: View, i: Int, l: Long) {
+                if (i == 1) {
+                    exerciseEngina = 1F
+                } else {
+                    exerciseEngina = 0F
+                }
+            }
+
+            override fun onNothingSelected(adapterView: AdapterView<*>) {}
+        }
+        binding.spinnerExerciseEngina.adapter = adapter
+    }
+    private fun spinnerAdapterChestPain() {
+        val adapter = ArrayAdapter(this, R.layout.simple_spinner_dropdown_item, item3)
+        binding.spinnerChestpain.adapter = adapter
+        binding.spinnerChestpain.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(adapterView: AdapterView<*>, view: View, i: Int, l: Long) {
+                if (i == 0) {
+                    chestPain = 0F
+                } else if (i == 1){
+                    chestPain = 1F
+                } else if (i == 2){
+                    chestPain = 2F
+                }else if (i == 3){
+                    chestPain = 3F
+                }
+            }
+
+            override fun onNothingSelected(adapterView: AdapterView<*>) {}
+        }
+        binding.spinnerChestpain.adapter = adapter
+    }
+
 }

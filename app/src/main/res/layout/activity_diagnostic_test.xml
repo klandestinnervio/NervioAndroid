@@ -12,7 +12,7 @@
         android:orientation="vertical"
         android:padding="8dp"
         android:layout_marginHorizontal="20dp"
-        tools:context=".DiagnosticTestActivity">
+        tools:context=".view.DiagnosticTestActivity">
 
         <TextView
             android:layout_width="match_parent"
@@ -87,17 +87,12 @@
             android:text="@string/question_4"
             android:textColor="@color/dark_blue"
             android:textSize="18sp" />
-        <EditText
-            android:id="@+id/user_chest_pain"
+        <Spinner
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:id="@+id/spinner_chestpain"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
-            android:ems="10"
-            android:fontFamily="@font/ptsanbold"
-            android:textAlignment="center"
-            android:inputType="number"
-            android:textSize="15sp" />
+            android:layout_height="40dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -142,16 +137,12 @@
             android:text="@string/question_7"
             android:textColor="@color/dark_blue"
             android:textSize="18sp" />
-        <EditText
-            android:id="@+id/user_fasting_blood"
+        <Spinner
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:id="@+id/spinner_restblood"
             android:layout_marginTop="10dp"
-            android:textAlignment="center"
             android:background="@drawable/custom_input"
-            android:ems="10"
-            android:inputType="number"
-            android:textSize="15sp" />
+            android:layout_height="40dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -196,16 +187,12 @@
             android:text="@string/question_10"
             android:textColor="@color/dark_blue"
             android:textSize="18sp" />
-        <EditText
-            android:id="@+id/user_induced_angina"
+        <Spinner
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:id="@+id/spinner_exerciseEngina"
             android:layout_marginTop="10dp"
-            android:textAlignment="center"
             android:background="@drawable/custom_input"
-            android:ems="10"
-            android:inputType="number"
-            android:textSize="15sp" />
+            android:layout_height="40dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -1,4 +1,4 @@
-package com.example.nerv_io
+package com.example.nerv_io.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,7 +7,6 @@ import com.example.nerv_io.adapter.HospitalAdapter
 import com.example.nerv_io.data.Hospital
 import com.example.nerv_io.databinding.ActivityHospitalRecomBinding
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.activity_hospital_recom.*
 
 class HospitalRecomActivity : AppCompatActivity() {
 

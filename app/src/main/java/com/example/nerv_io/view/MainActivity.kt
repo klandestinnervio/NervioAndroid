@@ -1,9 +1,10 @@
-package com.example.nerv_io
+package com.example.nerv_io.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.example.nerv_io.R
 import com.google.firebase.auth.FirebaseAuth
 
 
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
                 val menuIntent = Intent(this, MenuActivity::class.java)
                 startActivity(menuIntent)
             }else{
-                val logInIntent = Intent(this,SignInActivity::class.java)
+                val logInIntent = Intent(this, SignInActivity::class.java)
                 startActivity(logInIntent)
             }
         },2000)

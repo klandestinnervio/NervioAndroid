@@ -11,13 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NervIO">
-        <activity android:name=".ResultDiagnosticActivity"></activity>
-        <activity android:name=".SignInActivity" />
-        <activity android:name=".HospitalRecomActivity" />
-        <activity android:name=".DiagnosticTestActivity" />
-        <activity android:name=".HistoryDiagnosticActivity" />
-        <activity android:name=".MenuActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".view.GuideBookActivity"></activity>
+        <activity android:name=".view.ResultDiagnosticActivity" />
+        <activity android:name=".view.SignInActivity" />
+        <activity android:name=".view.HospitalRecomActivity" />
+        <activity android:name=".view.DiagnosticTestActivity" />
+        <activity android:name=".view.HistoryDiagnosticActivity" />
+        <activity android:name=".view.MenuActivity" />
+        <activity android:name=".view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

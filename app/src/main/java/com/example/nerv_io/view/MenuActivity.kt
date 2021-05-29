@@ -1,9 +1,10 @@
-package com.example.nerv_io
+package com.example.nerv_io.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import com.example.nerv_io.R
 import com.example.nerv_io.databinding.ActivityMenuBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -18,16 +19,13 @@ class MenuActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
-        binding.imgSignout.setOnClickListener{
+        binding.imgSignout.setOnClickListener {
             auth.signOut()
-            Intent(this@MenuActivity,SignInActivity::class.java).also {
+            Intent(this@MenuActivity, SignInActivity::class.java).also {
                 it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(it)
             }
-
-
         }
-
         binding.btnTest.setOnClickListener {
             val intent = Intent(this, DiagnosticTestActivity::class.java)
             startActivity(intent)
@@ -41,6 +39,10 @@ class MenuActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.GuideBook.setOnClickListener{
+            val intent = Intent(this, GuideBookActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -49,4 +51,6 @@ class MenuActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
 
     }
+
+
 }
