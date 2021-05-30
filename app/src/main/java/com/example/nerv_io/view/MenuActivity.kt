@@ -4,9 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import androidx.appcompat.app.AlertDialog
 import com.example.nerv_io.R
+import com.example.nerv_io.adapter.utils.Cons
 import com.example.nerv_io.databinding.ActivityMenuBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.orhanobut.hawk.Hawk
 
 class MenuActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMenuBinding
@@ -16,7 +19,7 @@ class MenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        Hawk.init(this).build()
         auth = FirebaseAuth.getInstance()
 
         binding.imgSignout.setOnClickListener {
@@ -27,8 +30,12 @@ class MenuActivity : AppCompatActivity() {
             }
         }
         binding.btnTest.setOnClickListener {
-            val intent = Intent(this, DiagnosticTestActivity::class.java)
-            startActivity(intent)
+            if (Hawk.get<String>(Cons.isOpen) == null) {
+                showAlert()
+            } else {
+                val intent = Intent(this, DiagnosticTestActivity::class.java)
+                startActivity(intent)
+            }
         }
         binding.btnHistory.setOnClickListener {
             val intent = Intent(this, HistoryDiagnosticActivity::class.java)
@@ -43,6 +50,25 @@ class MenuActivity : AppCompatActivity() {
             val intent = Intent(this, GuideBookActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+    }
+
+    fun showAlert() {
+        val builder = AlertDialog.Builder(this)
+        //set title for alert dialog
+        builder.setTitle("Information")
+        //set message for alert dialog
+        builder.setMessage("Please read guide test before you start")
+        builder.setIcon(android.R.drawable.ic_dialog_alert)
+        builder.setPositiveButton("OKE"){dialogInterface, which ->
+
+        }
+        val alertDialog: AlertDialog = builder.create()
+        alertDialog.setCancelable(false)
+        alertDialog.show()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

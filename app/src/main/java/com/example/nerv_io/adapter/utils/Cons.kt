@@ -4,5 +4,6 @@ class Cons {
 
     companion object{
         const val MyProfile =""
+        const val isOpen  ="isOpen"
     }
 }
