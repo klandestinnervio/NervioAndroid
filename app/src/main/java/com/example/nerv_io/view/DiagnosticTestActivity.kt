@@ -1,22 +1,30 @@
 package com.example.nerv_io.view
 
 import android.R
-import android.content.DialogInterface
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.*
-import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import com.example.nerv_io.adapter.utils.Cons
+import com.example.nerv_io.data.User
 import com.example.nerv_io.databinding.ActivityDiagnosticTestBinding
 import com.example.nerv_io.ml.ModelAkurasiOverfittingKecil
+import com.google.firebase.firestore.CollectionReference
+import com.google.firebase.firestore.FirebaseFirestore
+import com.orhanobut.hawk.Hawk
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 import java.nio.ByteBuffer
+import java.util.*
+
 
 class DiagnosticTestActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDiagnosticTestBinding
+    var db = FirebaseFirestore.getInstance()
+    val profile by lazy { Hawk.get<User>(Cons.MyProfile) }
 
 
     private val item = arrayOf(
@@ -50,21 +58,23 @@ class DiagnosticTestActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDiagnosticTestBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        Hawk.init(this).build()
 
         spinnerAdapter()
         spinnerAdapterRestBlood()
         spinnerAdapterExerciseEngina()
         spinnerAdapterChestPain()
+        binding.userName.setText(profile.name)
 
         val button: Button = binding.btnResult
         button.setOnClickListener(View.OnClickListener {
-            val userName : EditText = binding.userName
+            val userName: EditText = binding.userName
             val userAge: EditText = binding.userAge
             val userRestingBlood: EditText = binding.userRestBlood
             val userCholesterol: EditText = binding.userCholesterol
             val userRestEletrco: EditText = binding.userRestElectro
             val userHeartRate: EditText = binding.userHeartRate
-            val userOldPeak : EditText = binding.userOldpeak
+            val userOldPeak: EditText = binding.userOldpeak
             val userKindSlope: EditText = binding.userKindSlope
             val userMajorVessel: EditText = binding.userMajorVessel
             val userThalValue: EditText = binding.userThalValue
@@ -108,6 +118,32 @@ class DiagnosticTestActivity : AppCompatActivity() {
 
 //            tv.text = "Heart Disease - " + outputFeature0[0].toString() + "\nNot Heart Disease - " + outputFeature0[1].toString()
 
+            val city = hashMapOf(
+                "Age" to age,
+                "ChestPainType" to chestPain,
+                "Cholesterol" to cholesterol,
+                "ExerciseIncluded" to exerciseEngina,
+                "FastingBlood" to restBlood,
+                "FullName" to name,
+                "Gender" to gender.toString(),
+                "MaxHeartRate" to heartRate,
+                "NumberOfMajorVessels" to majorVessel.toString(),
+                "Oldpeak" to oldPeak.toString(),
+                "RestingBlood" to restingBlood.toString(),
+                "RestingElectroCardiography" to restElectro.toString(),
+                "SlopeOfThePeakExercise" to kindSlope.toString(),
+                "ThalValue" to thalValue.toString(),
+                "UserID" to profile.userID,
+                "HeartDisease" to outputFeature0[0],
+                "NotHeartDisease" to outputFeature0[1],
+            )
+
+
+            db.collection("diagnostic").document(UUID.randomUUID().toString())
+                .set(city)
+                .addOnSuccessListener { Log.d("ss", "DocumentSnapshot successfully written!") }
+                .addOnFailureListener { e -> Log.w("ss", "Error writing document", e) }
+
             val intent = Intent(this, ResultDiagnosticActivity::class.java)
             intent.putExtra(ResultDiagnosticActivity.NAME, name)
             intent.putExtra(ResultDiagnosticActivity.AGE, age.toString())
@@ -142,9 +178,9 @@ class DiagnosticTestActivity : AppCompatActivity() {
         binding.spinnerRestblood.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(adapterView: AdapterView<*>, view: View, i: Int, l: Long) {
                 if (i == 1) {
-                    restBlood = 1F
-                } else {
                     restBlood = 0F
+                } else {
+                    restBlood = 1F
                 }
             }
 
@@ -158,9 +194,9 @@ class DiagnosticTestActivity : AppCompatActivity() {
         binding.spinnerExerciseEngina.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(adapterView: AdapterView<*>, view: View, i: Int, l: Long) {
                 if (i == 1) {
-                    exerciseEngina = 1F
-                } else {
                     exerciseEngina = 0F
+                } else {
+                    exerciseEngina = 1F
                 }
             }
 

@@ -6,6 +6,8 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.nerv_io.R
+import com.example.nerv_io.adapter.utils.Cons
+import com.example.nerv_io.data.User
 import com.example.nerv_io.databinding.ActivitySignInBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -14,6 +16,7 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
+import com.orhanobut.hawk.Hawk
 
 
 class SignInActivity : AppCompatActivity() {
@@ -27,6 +30,7 @@ class SignInActivity : AppCompatActivity() {
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        Hawk.init(this).build()
         mAuth = FirebaseAuth.getInstance()
         val gso =
                 GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -78,6 +82,15 @@ class SignInActivity : AppCompatActivity() {
                         // Sign in success, update UI with the signed-in user's information
                         Log.d("TAG", "signInWithCredential:success")
                         val user = mAuth.currentUser
+
+                        val userData = User(
+                            user?.uid,
+                            user?.displayName,
+                            user?.email,
+                            user?.photoUrl.toString()
+                        )
+//                        Log.d(TAG, "firebaseAuthWithGooglee:" + user?.uid)
+                        Hawk.put(Cons.MyProfile, userData)
                         updateUI(user)
                     } else {
                         // If sign in fails, display a message to the user.
