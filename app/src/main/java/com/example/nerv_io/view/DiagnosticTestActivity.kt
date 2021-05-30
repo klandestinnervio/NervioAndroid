@@ -80,77 +80,100 @@ class DiagnosticTestActivity : AppCompatActivity() {
             val userThalValue: EditText = binding.userThalValue
 
 
-            val name = userName.text.toString()
-            val age = userAge.text.toString().toFloat()
-            val restingBlood = userRestingBlood.text.toString().toFloat()
-            val cholesterol = userCholesterol.text.toString().toFloat()
-            val restElectro = userRestEletrco.text.toString().toFloat()
-            val heartRate = userHeartRate.text.toString().toFloat()
-            val oldPeak = userOldPeak.text.toString().toFloat()
-            val kindSlope = userKindSlope.text.toString().toFloat()
-            val majorVessel = userMajorVessel.text.toString().toFloat()
-            val thalValue = userThalValue.text.toString().toFloat()
+            if (userName.text.isEmpty()) {
+                Toast.makeText(this, "Full Name is Required", Toast.LENGTH_SHORT).show()
+            } else if (userAge.text.isEmpty()) {
+                Toast.makeText(this, "Age is Required", Toast.LENGTH_SHORT).show()
+            }else if (userRestingBlood.text.isEmpty()) {
+                Toast.makeText(this, "Resting Blood Pressure is Required", Toast.LENGTH_SHORT).show()
+            } else if (userCholesterol.text.isEmpty()) {
+                Toast.makeText(this, "Cholesterol is Required", Toast.LENGTH_SHORT).show()
+            } else if (userRestEletrco.text.isEmpty()) {
+                Toast.makeText(this, "Resting Electrocardiography is Required", Toast.LENGTH_SHORT).show()
+            } else if (userHeartRate.text.isEmpty()) {
+                Toast.makeText(this, "Max heart Rate Achieved is Required", Toast.LENGTH_SHORT).show()
+            } else if (userOldPeak.text.isEmpty()) {
+                Toast.makeText(this, "Oldpeak is Required", Toast.LENGTH_SHORT).show()
+            } else if (userKindSlope.text.isEmpty()) {
+                Toast.makeText(this, "Slope of the peak is Required", Toast.LENGTH_SHORT).show()
+            } else if (userMajorVessel.text.isEmpty()) {
+                Toast.makeText(this, "Number of major vessels is Required", Toast.LENGTH_SHORT).show()
+            } else if (userThalValue.text.isEmpty()) {
+                Toast.makeText(this, "Thal Value is Required", Toast.LENGTH_SHORT).show()
+            } else {
+
+                val name = userName.text.toString()
+                val age = userAge.text.toString().toFloat()
+                val restingBlood = userRestingBlood.text.toString().toFloat()
+                val cholesterol = userCholesterol.text.toString().toFloat()
+                val restElectro = userRestEletrco.text.toString().toFloat()
+                val heartRate = userHeartRate.text.toString().toFloat()
+                val oldPeak = userOldPeak.text.toString().toFloat()
+                val kindSlope = userKindSlope.text.toString().toFloat()
+                val majorVessel = userMajorVessel.text.toString().toFloat()
+                val thalValue = userThalValue.text.toString().toFloat()
+
+                val byteBuffer: ByteBuffer = ByteBuffer.allocateDirect(13 * 4)
+                byteBuffer.putFloat(age)
+                byteBuffer.putFloat(gender)
+                byteBuffer.putFloat(chestPain)
+                byteBuffer.putFloat(restingBlood)
+                byteBuffer.putFloat(cholesterol)
+                byteBuffer.putFloat(restBlood)
+                byteBuffer.putFloat(restElectro)
+                byteBuffer.putFloat(heartRate)
+                byteBuffer.putFloat(exerciseEngina)
+                byteBuffer.putFloat(oldPeak)
+                byteBuffer.putFloat(kindSlope)
+                byteBuffer.putFloat(majorVessel)
+                byteBuffer.putFloat(thalValue)
 
 
-            val byteBuffer: ByteBuffer = ByteBuffer.allocateDirect(13 * 4)
-            byteBuffer.putFloat(age)
-            byteBuffer.putFloat(gender)
-            byteBuffer.putFloat(chestPain)
-            byteBuffer.putFloat(restingBlood)
-            byteBuffer.putFloat(cholesterol)
-            byteBuffer.putFloat(restBlood)
-            byteBuffer.putFloat(restElectro)
-            byteBuffer.putFloat(heartRate)
-            byteBuffer.putFloat(exerciseEngina)
-            byteBuffer.putFloat(oldPeak)
-            byteBuffer.putFloat(kindSlope)
-            byteBuffer.putFloat(majorVessel)
-            byteBuffer.putFloat(thalValue)
+                val model = ModelAkurasiOverfittingKecil.newInstance(this)
 
+                val inputFeature0 =
+                    TensorBuffer.createFixedSize(intArrayOf(1, 13), DataType.FLOAT32)
+                inputFeature0.loadBuffer(byteBuffer)
 
-            val model = ModelAkurasiOverfittingKecil.newInstance(this)
-
-            val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 13), DataType.FLOAT32)
-            inputFeature0.loadBuffer(byteBuffer)
-
-            val outputs = model.process(inputFeature0)
-            val outputFeature0 = outputs.outputFeature0AsTensorBuffer.floatArray
+                val outputs = model.process(inputFeature0)
+                val outputFeature0 = outputs.outputFeature0AsTensorBuffer.floatArray
 
 //            tv.text = "Heart Disease - " + outputFeature0[0].toString() + "\nNot Heart Disease - " + outputFeature0[1].toString()
 
-            val city = hashMapOf(
-                "Age" to age,
-                "ChestPainType" to chestPain,
-                "Cholesterol" to cholesterol,
-                "ExerciseIncluded" to exerciseEngina,
-                "FastingBlood" to restBlood,
-                "FullName" to name,
-                "Gender" to gender.toString(),
-                "MaxHeartRate" to heartRate,
-                "NumberOfMajorVessels" to majorVessel.toString(),
-                "Oldpeak" to oldPeak.toString(),
-                "RestingBlood" to restingBlood.toString(),
-                "RestingElectroCardiography" to restElectro.toString(),
-                "SlopeOfThePeakExercise" to kindSlope.toString(),
-                "ThalValue" to thalValue.toString(),
-                "UserID" to profile.userID,
-                "HeartDisease" to outputFeature0[0],
-                "NotHeartDisease" to outputFeature0[1],
-            )
+                val city = hashMapOf(
+                    "Age" to age,
+                    "ChestPainType" to chestPain,
+                    "Cholesterol" to cholesterol,
+                    "ExerciseIncluded" to exerciseEngina,
+                    "FastingBlood" to restBlood,
+                    "FullName" to name,
+                    "Gender" to gender.toString(),
+                    "MaxHeartRate" to heartRate,
+                    "NumberOfMajorVessels" to majorVessel.toString(),
+                    "Oldpeak" to oldPeak.toString(),
+                    "RestingBlood" to restingBlood.toString(),
+                    "RestingElectroCardiography" to restElectro.toString(),
+                    "SlopeOfThePeakExercise" to kindSlope.toString(),
+                    "ThalValue" to thalValue.toString(),
+                    "UserID" to profile.userID,
+                    "HeartDisease" to outputFeature0[0],
+                    "NotHeartDisease" to outputFeature0[1],
+                )
 
 
-            db.collection("diagnostic").document(UUID.randomUUID().toString())
-                .set(city)
-                .addOnSuccessListener { Log.d("ss", "DocumentSnapshot successfully written!") }
-                .addOnFailureListener { e -> Log.w("ss", "Error writing document", e) }
+                db.collection("diagnostic").document(UUID.randomUUID().toString())
+                    .set(city)
+                    .addOnSuccessListener { Log.d("ss", "DocumentSnapshot successfully written!") }
+                    .addOnFailureListener { e -> Log.w("ss", "Error writing document", e) }
 
-            val intent = Intent(this, ResultDiagnosticActivity::class.java)
-            intent.putExtra(ResultDiagnosticActivity.NAME, name)
-            intent.putExtra(ResultDiagnosticActivity.AGE, age.toString())
-            intent.putExtra(ResultDiagnosticActivity.Disease, outputFeature0[0].toString())
-            startActivity(intent)
+                val intent = Intent(this, ResultDiagnosticActivity::class.java)
+                intent.putExtra(ResultDiagnosticActivity.NAME, name)
+                intent.putExtra(ResultDiagnosticActivity.AGE, age.toString())
+                intent.putExtra(ResultDiagnosticActivity.Disease, outputFeature0[0].toString())
+                startActivity(intent)
 
-            model.close()
+                model.close()
+            }
 
         })
 
