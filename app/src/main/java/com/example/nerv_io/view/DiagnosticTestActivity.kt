@@ -11,12 +11,12 @@ import com.example.nerv_io.adapter.utils.Cons
 import com.example.nerv_io.data.User
 import com.example.nerv_io.databinding.ActivityDiagnosticTestBinding
 import com.example.nerv_io.ml.ModelAkurasiOverfittingKecil
-import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.orhanobut.hawk.Hawk
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 import java.nio.ByteBuffer
+import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -67,7 +67,7 @@ class DiagnosticTestActivity : AppCompatActivity() {
         binding.userName.setText(profile.name)
 
         val button: Button = binding.btnResult
-        button.setOnClickListener(View.OnClickListener {
+        button.setOnClickListener{
             val userName: EditText = binding.userName
             val userAge: EditText = binding.userAge
             val userRestingBlood: EditText = binding.userRestBlood
@@ -140,6 +140,8 @@ class DiagnosticTestActivity : AppCompatActivity() {
 
 //            tv.text = "Heart Disease - " + outputFeature0[0].toString() + "\nNot Heart Disease - " + outputFeature0[1].toString()
 
+                val currentDate: String =
+                    SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(Date())
                 val city = hashMapOf(
                     "Age" to age,
                     "ChestPainType" to chestPain,
@@ -149,13 +151,15 @@ class DiagnosticTestActivity : AppCompatActivity() {
                     "FullName" to name,
                     "Gender" to gender.toString(),
                     "MaxHeartRate" to heartRate,
-                    "NumberOfMajorVessels" to majorVessel.toString(),
-                    "Oldpeak" to oldPeak.toString(),
-                    "RestingBlood" to restingBlood.toString(),
-                    "RestingElectroCardiography" to restElectro.toString(),
-                    "SlopeOfThePeakExercise" to kindSlope.toString(),
-                    "ThalValue" to thalValue.toString(),
+                    "NumberOfMajorVessels" to majorVessel,
+                    "Oldpeak" to oldPeak,
+                    "RestingBlood" to restingBlood,
+                    "RestingElectroCardiography" to restElectro,
+                    "SlopeOfThePeakExercise" to kindSlope,
+                    "ThalValue" to thalValue,
                     "UserID" to profile.userID,
+                    "DateTime" to currentDate,
+                    "Photo" to profile.photo,
                     "HeartDisease" to outputFeature0[0],
                     "NotHeartDisease" to outputFeature0[1],
                 )
@@ -175,7 +179,7 @@ class DiagnosticTestActivity : AppCompatActivity() {
                 model.close()
             }
 
-        })
+        }
 
     }
 
