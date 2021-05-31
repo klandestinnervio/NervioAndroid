@@ -40,6 +40,7 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
             android:ems="10"
+            android:focusable="false"
             app:helperText="Required"
             android:textAlignment="center"
             android:inputType="text"

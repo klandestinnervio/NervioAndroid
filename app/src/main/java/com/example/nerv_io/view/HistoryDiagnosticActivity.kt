@@ -5,12 +5,15 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.nerv_io.R
 import com.example.nerv_io.adapter.HospitalAdapter
+import com.example.nerv_io.adapter.utils.Cons
 import com.example.nerv_io.adapter.utils.DiagnosticAdapter
 import com.example.nerv_io.data.Diagnostic
 import com.example.nerv_io.data.Hospital
+import com.example.nerv_io.data.User
 import com.example.nerv_io.databinding.ActivityHistoryDiagnosticBinding
 import com.example.nerv_io.databinding.ActivityHospitalRecomBinding
 import com.google.firebase.firestore.FirebaseFirestore
+import com.orhanobut.hawk.Hawk
 
 class HistoryDiagnosticActivity : AppCompatActivity() {
 
@@ -18,17 +21,19 @@ class HistoryDiagnosticActivity : AppCompatActivity() {
     var db = FirebaseFirestore.getInstance()
     private var diagnostic: MutableList<Diagnostic> = mutableListOf()
     var adapter: DiagnosticAdapter? = null
+    val profile by lazy { Hawk.get<User>(Cons.MyProfile) }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHistoryDiagnosticBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        Hawk.init(this).build()
         initData()
     }
 
     private fun initData() {
-        db.collection("diagnostic")
+        db.collection("diagnostic").whereEqualTo("FullName", profile.name)
             .get().addOnCompleteListener {
                 for (document in it.result!!) {
                     val feeds = document.toObject(Diagnostic::class.java)
