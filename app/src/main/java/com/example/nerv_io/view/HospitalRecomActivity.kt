@@ -20,6 +20,16 @@ class HospitalRecomActivity : AppCompatActivity() {
         binding = ActivityHospitalRecomBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initData()
+
+        val actionbar = supportActionBar
+        actionbar!!.title = "Hospital Recommendation"
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     private fun initData() {

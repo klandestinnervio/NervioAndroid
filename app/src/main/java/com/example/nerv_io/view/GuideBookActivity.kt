@@ -14,5 +14,14 @@ class GuideBookActivity : AppCompatActivity() {
         Hawk.init(this).build()
  
         Hawk.put(Cons.isOpen, IsOpen(isOpen = true))
+
+        val actionbar = supportActionBar
+        actionbar!!.title = "Guide Test"
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

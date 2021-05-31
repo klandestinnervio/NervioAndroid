@@ -3,9 +3,7 @@ package com.example.nerv_io.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
 import androidx.appcompat.app.AlertDialog
-import com.example.nerv_io.R
 import com.example.nerv_io.adapter.utils.Cons
 import com.example.nerv_io.databinding.ActivityMenuBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -38,7 +36,7 @@ class MenuActivity : AppCompatActivity() {
             }
         }
         binding.btnHistory.setOnClickListener {
-            val intent = Intent(this, HistoryDiagnosticActivity::class.java)
+            val intent = Intent(this, HistoryDiagnosisActivity::class.java)
             startActivity(intent)
         }
         binding.btnRecommen.setOnClickListener {
@@ -70,13 +68,5 @@ class MenuActivity : AppCompatActivity() {
         alertDialog.setCancelable(false)
         alertDialog.show()
     }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val inflater = menuInflater
-        inflater.inflate(R.menu.menu, menu)
-        return super.onCreateOptionsMenu(menu)
-
-    }
-
 
 }

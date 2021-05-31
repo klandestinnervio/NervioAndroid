@@ -100,7 +100,7 @@ class SignInActivity : AppCompatActivity() {
                 }
     }
 
-    fun updateUI(account: FirebaseUser?) {
+    private fun updateUI(account: FirebaseUser?) {
         if (account != null) {
             Toast.makeText(this, "U Signed In successfully", Toast.LENGTH_LONG).show()
             startActivity(Intent(this, MenuActivity::class.java))

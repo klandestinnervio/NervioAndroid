@@ -41,10 +41,30 @@ class DiagnosticTestActivity : AppCompatActivity() {
         "no"
     )
     private val item3 = arrayOf(
-        "Asymptomatic",
+        "asymptomatic",
         "atypical angina",
         "non-anginal pain",
         "typical angina"
+    )
+    private val item4 = arrayOf(
+        "normal",
+        "having ST-T wave abnormality"
+    )
+    private val item5 = arrayOf(
+        "upsloping",
+        "flap",
+        "downsloping"
+    )
+    private val item6 = arrayOf(
+        "0",
+        "1",
+        "2",
+        "3"
+    )
+    private val item7 = arrayOf(
+        "normal",
+        "fixed defect",
+        "reversable Defect"
     )
     private var gender = 1F
 
@@ -54,16 +74,34 @@ class DiagnosticTestActivity : AppCompatActivity() {
 
     private var chestPain = 1F
 
+    private var restEletrco = 1F
+
+    private var stSegment = 1F
+
+    private var restMajorVessel = 1F
+
+    private var restThalValue = 1F
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDiagnosticTestBinding.inflate(layoutInflater)
         setContentView(binding.root)
         Hawk.init(this).build()
 
+        val actionbar = supportActionBar
+        actionbar!!.title = "Diagnosis Test"
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
+
+
         spinnerAdapter()
         spinnerAdapterRestBlood()
         spinnerAdapterExerciseEngina()
         spinnerAdapterChestPain()
+        spinnerAdapterRestingElectro()
+        spinnerAdapterStSegment()
+        spinnerAdapterMajorVessels()
+        spinnerAdapterThalValue()
         binding.userName.setText(profile.name)
 
         val button: Button = binding.btnResult
@@ -72,12 +110,8 @@ class DiagnosticTestActivity : AppCompatActivity() {
             val userAge: EditText = binding.userAge
             val userRestingBlood: EditText = binding.userRestBlood
             val userCholesterol: EditText = binding.userCholesterol
-            val userRestEletrco: EditText = binding.userRestElectro
             val userHeartRate: EditText = binding.userHeartRate
             val userOldPeak: EditText = binding.userOldpeak
-            val userKindSlope: EditText = binding.userKindSlope
-            val userMajorVessel: EditText = binding.userMajorVessel
-            val userThalValue: EditText = binding.userThalValue
 
 
             if (userName.text.isEmpty()) {
@@ -88,30 +122,18 @@ class DiagnosticTestActivity : AppCompatActivity() {
                 Toast.makeText(this, "Resting Blood Pressure is Required", Toast.LENGTH_SHORT).show()
             } else if (userCholesterol.text.isEmpty()) {
                 Toast.makeText(this, "Cholesterol is Required", Toast.LENGTH_SHORT).show()
-            } else if (userRestEletrco.text.isEmpty()) {
-                Toast.makeText(this, "Resting Electrocardiography is Required", Toast.LENGTH_SHORT).show()
             } else if (userHeartRate.text.isEmpty()) {
                 Toast.makeText(this, "Max heart Rate Achieved is Required", Toast.LENGTH_SHORT).show()
             } else if (userOldPeak.text.isEmpty()) {
                 Toast.makeText(this, "Oldpeak is Required", Toast.LENGTH_SHORT).show()
-            } else if (userKindSlope.text.isEmpty()) {
-                Toast.makeText(this, "Slope of the peak is Required", Toast.LENGTH_SHORT).show()
-            } else if (userMajorVessel.text.isEmpty()) {
-                Toast.makeText(this, "Number of major vessels is Required", Toast.LENGTH_SHORT).show()
-            } else if (userThalValue.text.isEmpty()) {
-                Toast.makeText(this, "Thal Value is Required", Toast.LENGTH_SHORT).show()
             } else {
 
                 val name = userName.text.toString()
                 val age = userAge.text.toString().toFloat()
                 val restingBlood = userRestingBlood.text.toString().toFloat()
                 val cholesterol = userCholesterol.text.toString().toFloat()
-                val restElectro = userRestEletrco.text.toString().toFloat()
                 val heartRate = userHeartRate.text.toString().toFloat()
                 val oldPeak = userOldPeak.text.toString().toFloat()
-                val kindSlope = userKindSlope.text.toString().toFloat()
-                val majorVessel = userMajorVessel.text.toString().toFloat()
-                val thalValue = userThalValue.text.toString().toFloat()
 
                 val byteBuffer: ByteBuffer = ByteBuffer.allocateDirect(13 * 4)
                 byteBuffer.putFloat(age)
@@ -120,13 +142,13 @@ class DiagnosticTestActivity : AppCompatActivity() {
                 byteBuffer.putFloat(restingBlood)
                 byteBuffer.putFloat(cholesterol)
                 byteBuffer.putFloat(restBlood)
-                byteBuffer.putFloat(restElectro)
+                byteBuffer.putFloat(restEletrco)
                 byteBuffer.putFloat(heartRate)
                 byteBuffer.putFloat(exerciseEngina)
                 byteBuffer.putFloat(oldPeak)
-                byteBuffer.putFloat(kindSlope)
-                byteBuffer.putFloat(majorVessel)
-                byteBuffer.putFloat(thalValue)
+                byteBuffer.putFloat(stSegment)
+                byteBuffer.putFloat(restMajorVessel)
+                byteBuffer.putFloat(restThalValue)
 
 
                 val model = ModelAkurasiOverfittingKecil.newInstance(this)
@@ -151,12 +173,12 @@ class DiagnosticTestActivity : AppCompatActivity() {
                     "FullName" to name,
                     "Gender" to gender.toString(),
                     "MaxHeartRate" to heartRate,
-                    "NumberOfMajorVessels" to majorVessel,
+                    "NumberOfMajorVessels" to restMajorVessel,
                     "Oldpeak" to oldPeak,
                     "RestingBlood" to restingBlood,
-                    "RestingElectroCardiography" to restElectro,
-                    "SlopeOfThePeakExercise" to kindSlope,
-                    "ThalValue" to thalValue,
+                    "RestingElectroCardiography" to restEletrco,
+                    "SlopeOfThePeakExercise" to stSegment,
+                    "ThalValue" to restThalValue,
                     "UserID" to profile.userID,
                     "DateTime" to currentDate,
                     "Photo" to profile.photo,
@@ -181,6 +203,11 @@ class DiagnosticTestActivity : AppCompatActivity() {
 
         }
 
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     private fun spinnerAdapter() {
@@ -213,7 +240,7 @@ class DiagnosticTestActivity : AppCompatActivity() {
 
             override fun onNothingSelected(adapterView: AdapterView<*>) {}
         }
-        binding.spinnerGender.adapter = adapter
+        binding.spinnerRestblood.adapter = adapter
     }
     private fun spinnerAdapterExerciseEngina() {
         val adapter = ArrayAdapter(this, R.layout.simple_spinner_dropdown_item, item2)
@@ -251,5 +278,76 @@ class DiagnosticTestActivity : AppCompatActivity() {
         }
         binding.spinnerChestpain.adapter = adapter
     }
+    private fun spinnerAdapterRestingElectro() {
+        val adapter = ArrayAdapter(this, R.layout.simple_spinner_dropdown_item, item4)
+        binding.spinnerRestingElectro.adapter = adapter
+        binding.spinnerRestingElectro.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(adapterView: AdapterView<*>, view: View, i: Int, l: Long) {
+                if (i == 0) {
+                    restEletrco = 1F
+                } else {
+                    restEletrco = 2F
+                }
+            }
 
+            override fun onNothingSelected(adapterView: AdapterView<*>) {}
+        }
+        binding.spinnerRestingElectro.adapter = adapter
+    }
+    private fun spinnerAdapterStSegment() {
+        val adapter = ArrayAdapter(this, R.layout.simple_spinner_dropdown_item, item5)
+        binding.spinnerStsegment.adapter = adapter
+        binding.spinnerStsegment.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(adapterView: AdapterView<*>, view: View, i: Int, l: Long) {
+                if (i == 0) {
+                    stSegment = 0F
+                } else if(i == 1){
+                    stSegment = 1F
+                } else if(i == 2){
+                    stSegment = 2F
+                }
+            }
+
+            override fun onNothingSelected(adapterView: AdapterView<*>) {}
+        }
+        binding.spinnerStsegment.adapter = adapter
+    }
+    private fun spinnerAdapterMajorVessels() {
+        val adapter = ArrayAdapter(this, R.layout.simple_spinner_dropdown_item, item6)
+        binding.spinnerMajorvessels.adapter = adapter
+        binding.spinnerMajorvessels.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(adapterView: AdapterView<*>, view: View, i: Int, l: Long) {
+                if (i == 0) {
+                    restMajorVessel = 0F
+                } else if(i == 1){
+                    restMajorVessel = 1F
+                } else if(i == 2){
+                    restMajorVessel = 2F
+                } else if(i == 3){
+                    restMajorVessel = 3F
+                }
+            }
+
+            override fun onNothingSelected(adapterView: AdapterView<*>) {}
+        }
+        binding.spinnerMajorvessels.adapter = adapter
+    }
+    private fun spinnerAdapterThalValue() {
+        val adapter = ArrayAdapter(this, R.layout.simple_spinner_dropdown_item, item7)
+        binding.spinnerThalvalue.adapter = adapter
+        binding.spinnerThalvalue.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(adapterView: AdapterView<*>, view: View, i: Int, l: Long) {
+                if (i == 0) {
+                    restThalValue = 1F
+                } else if(i == 1){
+                    restThalValue = 2F
+                } else if(i == 2){
+                    restThalValue = 3F
+                }
+            }
+
+            override fun onNothingSelected(adapterView: AdapterView<*>) {}
+        }
+        binding.spinnerThalvalue.adapter = adapter
+    }
 }

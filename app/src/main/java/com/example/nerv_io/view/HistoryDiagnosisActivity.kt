@@ -12,7 +12,7 @@ import com.example.nerv_io.databinding.ActivityHistoryDiagnosticBinding
 import com.example.nerv_io.databinding.ActivityHospitalRecomBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
-class HistoryDiagnosticActivity : AppCompatActivity() {
+class HistoryDiagnosisActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHistoryDiagnosticBinding
     var db = FirebaseFirestore.getInstance()
@@ -24,7 +24,18 @@ class HistoryDiagnosticActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHistoryDiagnosticBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val actionbar = supportActionBar
+        actionbar!!.title = "Diagnosis History"
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
+
         initData()
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     private fun initData() {

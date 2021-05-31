@@ -17,4 +17,8 @@
     <string name="question_14">14. Thal Value</string>
     <string name="finish">Finish</string>
     <string name="phone_number_s">Phone Number : %s</string>
+    <string name="submit">Submit</string>
+    <string name="Name">Name : %s</string>
+    <string name="age">Age : %s</string>
+    <string name="gender">Gender : %s</string>
 </resources>

@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white"
     tools:context=".view.SignInActivity">
     <LinearLayout
         android:layout_width="match_parent"
@@ -57,7 +56,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="25dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="10dp"
             android:text="Our Services"
             android:textColor="#3E4785"
@@ -76,7 +75,7 @@
                 android:id="@+id/btn_test"
                 android:layout_margin="10dp"
                 android:layout_width="150dp"
-                android:backgroundTint="@color/blue_500"
+                android:backgroundTint="@color/white"
                 app:cardCornerRadius="20dp"
                 android:layout_height="150dp">
 
@@ -111,7 +110,6 @@
                 android:id="@+id/btn_history"
                 android:layout_margin="10dp"
                 android:layout_width="150dp"
-                android:backgroundTint="@color/blue_500"
                 app:cardCornerRadius="20dp"
                 android:layout_height="150dp">
 
@@ -153,7 +151,6 @@
                 android:id="@+id/btn_recommen"
                 android:layout_margin="10dp"
                 android:layout_width="150dp"
-                android:backgroundTint="@color/blue_500"
                 app:cardCornerRadius="20dp"
                 android:layout_height="150dp">
 
@@ -189,7 +186,6 @@
                 android:layout_margin="10dp"
                 app:cardCornerRadius="20dp"
                 android:layout_width="150dp"
-                android:backgroundTint="@color/blue_500"
                 android:layout_height="150dp">
 
                 <LinearLayout

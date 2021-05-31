@@ -28,7 +28,7 @@ class ResultDiagnosticActivity : AppCompatActivity() {
         age = intent.getStringExtra(AGE).toString()
         ValueDisease = intent.getStringExtra(Disease)
 
-        binding.valueResult.text = "The results of the diagnostic by the system showed: ${name} (${age} years)"
+        binding.valueResult.text = "The results of the diagnosis by the system showed: ${name} (${age} years)"
         binding.valueHeart.text = ValueDisease.toString()+"%"
 
 
