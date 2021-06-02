@@ -162,6 +162,12 @@ class DiagnosticTestActivity : AppCompatActivity() {
 
 //            tv.text = "Heart Disease - " + outputFeature0[0].toString() + "\nNot Heart Disease - " + outputFeature0[1].toString()
 
+                var newValueHeartDisease = outputFeature0[0].toString().substring(0..3)
+                var newValueNotHeartDisease = outputFeature0[1].toString().substring(0..3)
+                Log.e("VALUEEEEE", newValueHeartDisease)
+                var toIntHeart = newValueHeartDisease.toFloat() * 100
+                var toIntNotHeart = newValueNotHeartDisease.toFloat() * 100
+                Log.e("VALUEEEEE222", toIntHeart.toInt().toString())
                 val currentDate: String =
                     SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(Date())
                 val city = hashMapOf(
@@ -182,8 +188,8 @@ class DiagnosticTestActivity : AppCompatActivity() {
                     "UserID" to profile.userID,
                     "DateTime" to currentDate,
                     "Photo" to profile.photo,
-                    "HeartDisease" to outputFeature0[0],
-                    "NotHeartDisease" to outputFeature0[1],
+                    "HeartDisease" to toIntHeart.toInt(),
+                    "NotHeartDisease" to toIntNotHeart.toInt(),
                 )
 
 
@@ -195,7 +201,7 @@ class DiagnosticTestActivity : AppCompatActivity() {
                 val intent = Intent(this, ResultDiagnosticActivity::class.java)
                 intent.putExtra(ResultDiagnosticActivity.NAME, name)
                 intent.putExtra(ResultDiagnosticActivity.AGE, age.toString())
-                intent.putExtra(ResultDiagnosticActivity.Disease, outputFeature0[0].toString())
+                intent.putExtra(ResultDiagnosticActivity.Disease, toIntHeart.toInt().toString())
                 startActivity(intent)
 
                 model.close()

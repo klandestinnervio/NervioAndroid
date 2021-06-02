@@ -2,6 +2,7 @@ package com.example.nerv_io.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.nerv_io.adapter.utils.Cons
 import com.example.nerv_io.adapter.utils.DiagnosticAdapter
@@ -52,6 +53,8 @@ class HistoryDiagnosisActivity : AppCompatActivity() {
                     it.setHasFixedSize(true)
                     it.adapter = adapter
                 }
+
+                    binding.progressBar.visibility = View.GONE
             }
     }
 }

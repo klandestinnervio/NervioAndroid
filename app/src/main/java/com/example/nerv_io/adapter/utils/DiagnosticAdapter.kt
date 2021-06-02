@@ -33,7 +33,7 @@ class DiagnosticAdapter(private val context: Context?, private val listFeed: Mut
 
                 name_user.text = data.FullName
                 date_user.text = data.DateTime
-                tv_heart_disease.text = data.HeartDisease.toString()
+                tv_heart_disease.text = "Possibly declared cancer "+data.HeartDisease.toString().plus(" %")
 
             }
         }

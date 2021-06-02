@@ -2,6 +2,7 @@ package com.example.nerv_io.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.nerv_io.adapter.HospitalAdapter
 import com.example.nerv_io.data.Hospital
@@ -45,6 +46,7 @@ class HospitalRecomActivity : AppCompatActivity() {
                     it.setHasFixedSize(true)
                     it.adapter = adapter
                 }
+                    binding.progressBar.visibility = View.GONE
             }
     }
 
