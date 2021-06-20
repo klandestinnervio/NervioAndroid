@@ -36,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="(Early Detection of Heart Cancer)"
+                android:text="(Deteksi Dini Penyakit Jantung)"
                 android:textColor="#3E4785"
                 android:fontFamily="@font/ptsansregular"
                 android:textSize="15sp"

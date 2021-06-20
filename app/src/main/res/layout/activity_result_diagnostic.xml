@@ -30,7 +30,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="50dp"
                 android:fontFamily="@font/ptsanbold"
-                android:text="Diagnostic Result"
+                android:text="Hasil Diagnosis"
                 android:textColor="#3E4785"
                 android:textSize="30sp"
                 android:textStyle="bold" />
@@ -43,7 +43,7 @@
                 android:textStyle="normal"
                 android:fontFamily="@font/ptsansregular"
                 android:id="@+id/value_result"
-                android:text="The results of the diagnostic by the system showed: Aisyah nurul (20 years)"
+                android:text="Hasil diagnosa oleh sistem menunjukkan: Aisyah nurul (20 tahun)"
                 android:textColor="#3E4785"
                 android:textSize="15sp"/>
 
@@ -64,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_gravity="center_horizontal"
-                android:text="possibly declared to have HEART CANCER."
+                android:text="kemungkinan dinyatakan menderita KANKER JANTUNG."
                 android:textColor="#3E4785"
                 android:textSize="15sp"
                 android:textStyle="bold"/>
@@ -76,7 +76,7 @@
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
                 android:fontFamily="@font/ptsansregular"
-                android:text="* For more information, please contact the near hospital"
+                android:text="* Untuk informasi lebih lanjut, silakan hubungi rumah sakit terdekat"
                 android:textColor="#3E4785"
                 android:textSize="15sp"
                 android:textStyle="normal"/>

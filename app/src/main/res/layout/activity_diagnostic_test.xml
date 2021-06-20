@@ -92,16 +92,31 @@
             android:textColor="@color/dark_blue"
             android:textSize="18sp" />
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/custom_input"
+            android:layout_height="40dp">
         <EditText
             android:id="@+id/user_rest_blood"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/custom_input"
+            android:layout_height="match_parent"
             android:ems="10"
+            android:background="@null"
             android:inputType="number"
             android:padding="10dp"
             android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="mmHg"
+                android:textSize="15sp"
+                android:layout_marginRight="13dp"
+                android:textColor="@color/dark_blue"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -112,16 +127,31 @@
             android:textColor="@color/dark_blue"
             android:textSize="18sp" />
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/custom_input"
+            android:layout_height="40dp">
+
         <EditText
             android:id="@+id/user_cholesterol"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/custom_input"
+            android:layout_height="match_parent"
             android:ems="10"
             android:inputType="number"
+            android:background="@null"
             android:padding="10dp"
             android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="mg/Dl"
+                android:textSize="15sp"
+                android:layout_marginRight="13dp"
+                android:textColor="@color/dark_blue"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -138,6 +168,13 @@
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ptsanbold"
+            android:text="@string/desc_gula_darah"
+            android:textSize="15sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -190,6 +227,13 @@
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ptsanbold"
+            android:text="0= Tidak, 1= Ya"
+            android:textSize="15sp" />
 
         <TextView
             android:layout_width="wrap_content"

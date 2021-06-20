@@ -28,32 +28,33 @@ class DiagnosticTestActivity : AppCompatActivity() {
 
 
     private val item = arrayOf(
-        "Male",
-        "Female"
+        "Laki-Laki",
+        "Perempuan"
     )
 
     private val item1 = arrayOf(
-        "True",
-        "False"
+        "Benar",
+        "Salah"
     )
     private val item2 = arrayOf(
-        "yes",
-        "no"
+        "Ya",
+        "Tidak"
     )
     private val item3 = arrayOf(
-        "asymptomatic",
-        "atypical angina",
-        "non-anginal pain",
-        "typical angina"
+        "Tanpa Gejala",
+        "Angina atipikal",
+        "Nyeri non-angina",
+        "Typical angina"
     )
     private val item4 = arrayOf(
-        "normal",
-        "having ST-T wave abnormality"
+        "Normal",
+        "memiliki kelainan gelombang ST-T",
+            "kemungkinan hipertrofi ventrikel kiri"
     )
     private val item5 = arrayOf(
-        "upsloping",
-        "flap",
-        "downsloping"
+        "Naik",
+        "Datar",
+        "Menurun"
     )
     private val item6 = arrayOf(
         "0",
@@ -62,9 +63,9 @@ class DiagnosticTestActivity : AppCompatActivity() {
         "3"
     )
     private val item7 = arrayOf(
-        "normal",
-        "fixed defect",
-        "reversable Defect"
+        "Normal",
+        "Cacat Tetap",
+        "Cacat yang dapat sembuh"
     )
     private var gender = 1F
 
@@ -89,9 +90,9 @@ class DiagnosticTestActivity : AppCompatActivity() {
         Hawk.init(this).build()
 
         val actionbar = supportActionBar
-        actionbar!!.title = "Diagnosis Test"
-        actionbar.setDisplayHomeAsUpEnabled(true)
-        actionbar.setDisplayHomeAsUpEnabled(true)
+////        actionbar!!.title = "Diagnosis Test"
+        actionbar?.setDisplayHomeAsUpEnabled(true)
+//        actionbar.setDisplayHomeAsUpEnabled(true)
 
 
         spinnerAdapter()
@@ -153,8 +154,7 @@ class DiagnosticTestActivity : AppCompatActivity() {
 
                 val model = ModelAkurasiOverfittingKecil.newInstance(this)
 
-                val inputFeature0 =
-                    TensorBuffer.createFixedSize(intArrayOf(1, 13), DataType.FLOAT32)
+                val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 13), DataType.FLOAT32)
                 inputFeature0.loadBuffer(byteBuffer)
 
                 val outputs = model.process(inputFeature0)
@@ -306,11 +306,11 @@ class DiagnosticTestActivity : AppCompatActivity() {
         binding.spinnerStsegment.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(adapterView: AdapterView<*>, view: View, i: Int, l: Long) {
                 if (i == 0) {
-                    stSegment = 0F
-                } else if(i == 1){
                     stSegment = 1F
-                } else if(i == 2){
+                } else if(i == 1){
                     stSegment = 2F
+                } else if(i == 2){
+                    stSegment = 3F
                 }
             }
 
@@ -344,11 +344,11 @@ class DiagnosticTestActivity : AppCompatActivity() {
         binding.spinnerThalvalue.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(adapterView: AdapterView<*>, view: View, i: Int, l: Long) {
                 if (i == 0) {
-                    restThalValue = 1F
-                } else if(i == 1){
-                    restThalValue = 2F
-                } else if(i == 2){
                     restThalValue = 3F
+                } else if(i == 1){
+                    restThalValue = 6F
+                } else if(i == 2){
+                    restThalValue = 7F
                 }
             }
 

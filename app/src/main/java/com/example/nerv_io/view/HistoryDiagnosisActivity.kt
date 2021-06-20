@@ -27,9 +27,9 @@ class HistoryDiagnosisActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val actionbar = supportActionBar
-        actionbar!!.title = "Diagnosis History"
-        actionbar.setDisplayHomeAsUpEnabled(true)
-        actionbar.setDisplayHomeAsUpEnabled(true)
+//        actionbar!!.title = "Diagnosis History"
+        actionbar?.setDisplayHomeAsUpEnabled(true)
+        actionbar?.setDisplayHomeAsUpEnabled(true)
 
         Hawk.init(this).build()
         initData()

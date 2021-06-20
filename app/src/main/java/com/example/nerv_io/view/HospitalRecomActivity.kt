@@ -23,9 +23,9 @@ class HospitalRecomActivity : AppCompatActivity() {
         initData()
 
         val actionbar = supportActionBar
-        actionbar!!.title = "Hospital Recommendation"
-        actionbar.setDisplayHomeAsUpEnabled(true)
-        actionbar.setDisplayHomeAsUpEnabled(true)
+//        actionbar!!.title = "Hospital Recommendation"
+        actionbar?.setDisplayHomeAsUpEnabled(true)
+        actionbar?.setDisplayHomeAsUpEnabled(true)
     }
 
     override fun onSupportNavigateUp(): Boolean {
